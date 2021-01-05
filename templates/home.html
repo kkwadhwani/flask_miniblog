@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="title"><img class="logo" src="/static/asset/o.png" width="75" height="75"> Miniblog</div>
+        <div class="menu">
+            <div class="menu-item">Recent</div>
+            <div class="menu-item">Calender</div>
+
+        </div>
+    </header>
+    <div class="container">
+        <form method="POST">
+            <textarea name="content"></textarea>
+            <input type="submit" value="Submit"/>
+        </form>
+        <div class="entries">
+            {%for entry in entries%}
+            <div class="entry">
+                <div class="entry-title">{{entry[0] | truncate(30, true)}}<span class="entry-date">●{{entry[1]}} </span></div>
+                <p class="entry-content">{{entry[0]}}</p>
+            </div>
+
+            {%endfor%}
+        </div>
+   </div>
+    <footer>
+        <div class="footer-container">
+            <div class="left">
+                <a class=" footer-item">Made by Kunal W.</a>
+                <a class=" footer-item">Check out my other projects.</a>
+            </div>
+            <div class="right">
+                <div class="footer-section">
+                    <a class=" footer-item">Recent</a>
+                    <a class=" footer-item">Calender</a>
+                </div>
+                <div class="footer-section">
+                    <a class=" footer-item">About</a>
+                    <a class=" footer-item">How it was made</a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+</html>
